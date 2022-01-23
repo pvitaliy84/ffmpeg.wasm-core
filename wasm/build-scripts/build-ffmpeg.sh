@@ -36,6 +36,7 @@ FLAGS=(
   $OPTIM_FLAGS
   ${EXTRA_FLAGS[@]}
 )
+
 echo "FFMPEG_EM_FLAGS=${FLAGS[@]}"
 emmake make -j
 emcc "${FLAGS[@]}"
