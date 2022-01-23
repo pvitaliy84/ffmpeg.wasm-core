@@ -20,10 +20,6 @@ jobs:
       max-parallel: 1
       matrix:
         script:
-          - build-zlib
-          - build-x264
-          - build-x265
-          - build-libvpx
           - build-wavpack
           - build-lame
           - build-fdk-aac
@@ -31,11 +27,6 @@ jobs:
           - build-vorbis
           - build-theora
           - build-opus
-          - build-libwebp
-          - build-freetype2
-          - build-fribidi
-          - build-harfbuzz
-          - build-libass
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
