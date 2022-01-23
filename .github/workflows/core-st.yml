@@ -25,7 +25,6 @@ jobs:
           - build-fdk-aac
           - build-ogg
           - build-vorbis
-          - build-theora
           - build-opus
     runs-on: ubuntu-latest
     steps:
