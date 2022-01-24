@@ -65,6 +65,8 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --disable-everything
   --disable-network
   --enable-small
+  --enable-protocol=file
+  --enable-ffmpeg
   --extra-cflags="$CFLAGS"
   --extra-cxxflags="$CFLAGS"
   --extra-ldflags="$LDFLAGS"
