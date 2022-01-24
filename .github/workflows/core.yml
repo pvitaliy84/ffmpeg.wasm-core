@@ -22,7 +22,6 @@ jobs:
         script:
           - build-wavpack
           - build-lame
-          - build-fdk-aac
           - build-ogg
           - build-vorbis
           - build-opus

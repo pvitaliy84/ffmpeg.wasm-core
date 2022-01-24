@@ -62,6 +62,8 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --disable-debug         # disable debug info, required by closure
   --disable-runtime-cpudetect   # disable runtime cpu detect
   --disable-autodetect    # disable external libraries auto detect
+  --disable-all
+  --disable-network
   --extra-cflags="$CFLAGS"
   --extra-cxxflags="$CFLAGS"
   --extra-ldflags="$LDFLAGS"
@@ -73,6 +75,7 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --cxx=em++
   --objcc=emcc
   --dep-cc=emcc
+
   ${EXTRA_FFMPEG_CONF_FLAGS-}
 )
 
