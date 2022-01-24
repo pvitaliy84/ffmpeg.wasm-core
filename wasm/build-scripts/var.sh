@@ -64,6 +64,7 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --disable-autodetect    # disable external libraries auto detect
   --disable-all
   --disable-network
+  --enable-small
   --extra-cflags="$CFLAGS"
   --extra-cxxflags="$CFLAGS"
   --extra-ldflags="$LDFLAGS"
