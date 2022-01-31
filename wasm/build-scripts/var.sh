@@ -56,7 +56,7 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --enable-cross-compile  # enable cross compile
   --disable-x86asm        # disable x86 asm
   --disable-inline-asm    # disable inline asm
-  #--disable-stripping     # disable stripping
+  --disable-stripping     # disable stripping
   --disable-programs      # disable programs build (incl. ffplay, ffprobe & ffmpeg)
   --disable-doc           # disable doc
   --disable-debug         # disable debug info, required by closure
