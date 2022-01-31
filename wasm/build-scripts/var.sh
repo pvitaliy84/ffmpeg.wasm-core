@@ -56,7 +56,7 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --enable-cross-compile  # enable cross compile
   --disable-x86asm        # disable x86 asm
   --disable-inline-asm    # disable inline asm
-  --disable-stripping     # disable stripping
+  #--disable-stripping     # disable stripping
   --disable-programs      # disable programs build (incl. ffplay, ffprobe & ffmpeg)
   --disable-doc           # disable doc
   --disable-debug         # disable debug info, required by closure
@@ -67,6 +67,17 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --enable-small
   --enable-protocol=file
   --enable-ffmpeg
+  --enable-avcodec
+  --enable-avformat
+  --enable-swresample
+  --enable-avfilter
+  --enable-filter=aresample
+  --disable-swscale
+  --enable-muxer=mp3,ogg,wav,mp4,flac,pcm*
+  --enable-demuxer=mp3,ogg,wav,aac,flac,pcm*
+  --enable-encoder=libvorbis
+  --enable-decoder=mp3*,opus,libopus,vorbis,libvorbis,wavpack,adpcm_ima_wav,flac,aac*,libfdk_aac \
+  --enable-libmp3lame --enable-libvorbis --enable-libopus
   --extra-cflags="$CFLAGS"
   --extra-cxxflags="$CFLAGS"
   --extra-ldflags="$LDFLAGS"
