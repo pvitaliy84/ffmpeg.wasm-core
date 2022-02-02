@@ -20,7 +20,7 @@ run-all() {
     #build-libvpx
     build-wavpack
     build-lame
-    #build-fdk-aac
+    build-fdk-aac
     build-ogg
     build-vorbis
     #build-theora
