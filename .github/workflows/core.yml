@@ -23,6 +23,7 @@ jobs:
           - build-wavpack
           - build-lame
           - build-ogg
+          - build-fdk-aac
           - build-vorbis
           - build-opus
     runs-on: ubuntu-latest
