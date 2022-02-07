@@ -3,21 +3,7 @@
 set -eo pipefail
 source $(dirname $0)/var.sh
 
-if [[ "$FFMPEG_ST" != "yes" ]]; then
-  echo "FFMPEG=no"
-  mkdir -p wasm/packages/core/dist
-  EXTRA_FLAGS=(
-    -pthread
-    -s USE_PTHREADS=1                             # enable pthreads support
-    -s PROXY_TO_PTHREAD=1                         # detach main() from browser/UI main thread
-    -o wasm/packages/core/dist/ffmpeg-core.js
-  )
-else
-  mkdir -p wasm/packages/core-st/dist
-  EXTRA_FLAGS=(
-    -o wasm/packages/core-st/dist/ffmpeg-core.js
-  )
-fi
+mkdir -p wasm/packages/core/dist
 
 #FLAGS=(
 #  -I. -I./fftools -I$BUILD_DIR/include
@@ -43,9 +29,12 @@ FLAGS=(
   -I. -I./fftools -I$BUILD_DIR/include
   -Llibavcodec -Llibavdevice -Llibavfilter -Llibavformat -Llibavresample -Llibavutil -Llibass -Llibpostproc -Llibswscale -Llibswresample -L$BUILD_DIR/lib
   -Wno-deprecated-declarations -Wno-pointer-sign -Wno-implicit-int-float-conversion -Wno-switch -Wno-parentheses -Qunused-arguments
-  -lavdevice -lavfilter -lavformat -lavcodec -lswresample -lavutil -lm -lwavpack -lmp3lame -lfdk-aac -lvorbis -lvorbisenc -lvorbisfile -logg -lopus
+  -lavdevice -lavfilter -lavformat -lavcodec -lswresample -lavutil -lm -lwavpack -lmp3lame -lfdk-aac -lvorbis -lvorbisenc -lvorbisfile -logg -lopus -pthread
   fftools/ffmpeg_opt.c fftools/ffmpeg_filter.c fftools/ffmpeg_hw.c fftools/cmdutils.c fftools/ffmpeg.c
+  -o wasm/packages/core/dist/ffmpeg-core.js
   -s USE_SDL=2                                  # use SDL2
+  -s USE_PTHREADS=1                             # enable pthreads support
+  -s PROXY_TO_PTHREAD=1                         # detach main() from browser/UI main thread
   -s INVOKE_RUN=0                               # not to run the main() in the beginning
   -s EXIT_RUNTIME=1                             # exit runtime after execution
   -s MODULARIZE=1                               # use modularized version to be more flexible
@@ -57,7 +46,6 @@ FLAGS=(
   --pre-js wasm/src/pre.js
   --post-js wasm/src/post.js
   $OPTIM_FLAGS
-  ${EXTRA_FLAGS[@]}
 )
 
 echo "FFMPEG_EM_FLAGS=${FLAGS[@]}"
