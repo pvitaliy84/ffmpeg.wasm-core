@@ -13,6 +13,7 @@ FLAGS=(
   fftools/ffmpeg_opt.c fftools/ffmpeg_filter.c fftools/ffmpeg_hw.c fftools/cmdutils.c fftools/ffmpeg.c
   -o wasm/packages/core/dist/ffmpeg-core.js
   -s USE_SDL=2                                  # use SDL2
+  -pthread
   -s USE_PTHREADS=1                             # enable pthreads support
   -s PROXY_TO_PTHREAD=1                         # detach main() from browser/UI main thread
   -s INVOKE_RUN=0                               # not to run the main() in the beginning
