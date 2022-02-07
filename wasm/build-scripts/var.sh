@@ -10,7 +10,7 @@ export PATH=$PATH:$EMSDK/upstream/bin
 # if yes, we are building a single thread version of
 # ffmpeg.wasm-core, which is slow but compatible with
 # most browsers as there is no SharedArrayBuffer.
-FFMPEG_ST=${FFMPEG_ST:-no}
+FFMPEG_ST="no"
 
 # Root directory
 ROOT_DIR=$PWD

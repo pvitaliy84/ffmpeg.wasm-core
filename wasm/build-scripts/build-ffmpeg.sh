@@ -4,6 +4,7 @@ set -eo pipefail
 source $(dirname $0)/var.sh
 
 if [[ "$FFMPEG_ST" != "yes" ]]; then
+  echo "FFMPEG=no"
   mkdir -p wasm/packages/core/dist
   EXTRA_FLAGS=(
     -pthread
