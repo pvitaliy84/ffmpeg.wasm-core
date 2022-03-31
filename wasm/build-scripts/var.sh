@@ -75,7 +75,7 @@ FFMPEG_CONFIG_FLAGS_BASE=(
   --disable-swscale
   --enable-muxer=mp3,ogg,wav,mp4,flac,pcm*
   --enable-demuxer=mp3,ogg,wav,aac,flac,pcm*
-  --enable-encoder=libvorbis
+  --enable-encoder=libvorbis,libmp3lame
   --enable-decoder=mp3*,opus,libopus,vorbis,libvorbis,wavpack,adpcm_ima_wav,pcm*,flac,aac*,libfdk_aac \
   --enable-libmp3lame --enable-libvorbis --enable-libopus --enable-libfdk-aac --enable-nonfree \
   --extra-cflags="$CFLAGS"
